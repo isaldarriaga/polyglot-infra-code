@@ -1,21 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  name: hello-harbor
+  name: smoke-argo-wf
   labels:
     workflows.argoproj.io/archive-strategy: "false"
   annotations:
     workflows.argoproj.io/description: |
-      This is a simple hello world example pulling image from private harbor registry
+      This is a simple hello world example
+      since we're running k8s / cri-o argo workflows needs pns executor to work properly
 spec:
   securityContext:
     runAsNonRoot: true
     runAsUser: 8737 #; any non-root user
   serviceAccountName: argo-server
-  entrypoint: whalesay
+  entrypoint: docker-says
   templates:
-    - name: whalesay
+    - name: docker-says
       container:
         image: docker/whalesay:latest
         command: [cowsay]
-        args: ["hello world"]
+        args: ["I did run using argo's pns executor"]

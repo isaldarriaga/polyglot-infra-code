@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: smoke-argo-wf
+  labels:
+    workflows.argoproj.io/archive-strategy: "false"
+  annotations:
+    workflows.argoproj.io/description: |
+      This is a simple UTC date output command
+      the image is pulled from private harbor registry
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 8737 #; any non-root user
+  serviceAccountName: argo-server
+  entrypoint: utc-date-is
+  templates:
+    - name: utc-date-is
+      container:
+        image: core.harbor.domain/testops/hello-world
+        command: [date]
+        args: ["u"]
