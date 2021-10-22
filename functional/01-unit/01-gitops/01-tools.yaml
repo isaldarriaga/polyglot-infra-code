@@ -4,9 +4,9 @@ metadata:
   name: unit-tools
 spec:
   destination:
-    name: "in-cluster"
+    name: in-cluster
     namespace: unit
-    server: "https://kubernetes.default.svc"
+    server: ""
   source:
     path: functional/01-unit/02-manifests/01-tools
     repoURL: "https://github.com/isaldarriaga/polyglot-infra-code.git"
@@ -18,3 +18,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
