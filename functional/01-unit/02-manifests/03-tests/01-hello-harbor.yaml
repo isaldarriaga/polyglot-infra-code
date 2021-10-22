@@ -11,7 +11,7 @@ spec:
   securityContext:
     runAsNonRoot: true
     runAsUser: 8737 #; any non-root user
-  serviceAccountName: argo
+  serviceAccountName: default
   entrypoint: whalesay
   templates:
     - name: whalesay
