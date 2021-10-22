@@ -9,9 +9,9 @@ metadata:
       This is a simple hello world example pulling image from private harbor registry
 spec:
   securityContext:
-    runAsNonRoot: false
+    runAsNonRoot: true
     runAsUser: 8737 #; any non-root user
-  serviceAccountName: default
+  serviceAccountName: argo-server
   entrypoint: whalesay
   templates:
     - name: whalesay
