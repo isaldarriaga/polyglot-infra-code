@@ -4,7 +4,7 @@ metadata:
   name: unit-app
 spec:
   destination:
-    name: ""
+    name: "in-cluster"
     namespace: unit
     server: "https://kubernetes.default.svc"
   source:

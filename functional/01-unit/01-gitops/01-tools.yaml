@@ -4,7 +4,7 @@ metadata:
   name: unit-tools
 spec:
   destination:
-    name: ""
+    name: "in-cluster"
     namespace: unit
     server: "https://kubernetes.default.svc"
   source:
@@ -17,4 +17,4 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=false
+      - CreateNamespace=true
