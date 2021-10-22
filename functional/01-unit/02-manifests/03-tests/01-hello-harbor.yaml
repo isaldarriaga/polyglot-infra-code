@@ -16,6 +16,6 @@ spec:
   templates:
     - name: whalesay
       container:
-        image: core.harbor.domain/testops/hello-world
+        image: docker/whalesay:latest
         command: [cowsay]
         args: ["hello world"]
