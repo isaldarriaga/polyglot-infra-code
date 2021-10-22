@@ -9,7 +9,7 @@ metadata:
       This is a simple hello world example pulling image from private harbor registry
 spec:
   securityContext:
-    runAsNonRoot: true
+    runAsNonRoot: false
     runAsUser: 8737 #; any non-root user
   serviceAccountName: default
   entrypoint: whalesay
