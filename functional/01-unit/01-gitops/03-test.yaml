@@ -9,7 +9,7 @@ spec:
     server: "https://kubernetes.default.svc"
   source:
     path: functional/01-unit/02-manifests/03-tests
-    repoURL: "https://github.com/isaldarriaga/service-mesh-stress.git"
+    repoURL: "https://github.com/isaldarriaga/polyglot-infra-code.git"
     targetRevision: HEAD
     directory:
       recurse: false
